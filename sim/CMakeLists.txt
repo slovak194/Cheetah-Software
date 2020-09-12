@@ -36,10 +36,14 @@ QT5_WRAP_CPP(tst_hdr_moc ${QOBJECT_HEADERS})
 include_directories("include/")
 include_directories("../common/include/")
 include_directories("../lcm-types/cpp")
-include_directories("/usr/local/include/lcm/")   # lcm includes
+#include_directories("/usr/include/lcm/")   # lcm includes
 include_directories("../third-party/ParamHandler")
 include_directories(${CMAKE_BINARY_DIR})
 file(GLOB sources "src/*.cpp")
+
+#set(Qt5Core_DIR ~/Qt/5.12.4/gcc_64/lib/cmake/Qt5Core)
+#set(Qt5Widgets_DIR ~/Qt/5.12.4/gcc_64/lib/cmake/Qt5Widgets)
+#set(Qt5Gamepad_DIR ~/Qt/5.12.4/gcc_64/lib/cmake/Qt5Gamepad)
 
 find_package(Qt5Core COMPONENTS QtGamepad REQUIRED)
 find_package(Qt5Gamepad REQUIRED)
