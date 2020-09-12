@@ -41,7 +41,7 @@ include_directories("../third-party/ParamHandler")
 include_directories(${CMAKE_BINARY_DIR})
 file(GLOB sources "src/*.cpp")
 
-#set(Qt5Core_DIR ~/Qt/5.12.4/gcc_64/lib/cmake/Qt5Core)
+#set(Qt5Cor e_DIR ~/Qt/5.12.4/gcc_64/lib/cmake/Qt5Core)
 #set(Qt5Widgets_DIR ~/Qt/5.12.4/gcc_64/lib/cmake/Qt5Widgets)
 #set(Qt5Gamepad_DIR ~/Qt/5.12.4/gcc_64/lib/cmake/Qt5Gamepad)
 

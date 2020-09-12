@@ -21,7 +21,7 @@
 #include <termios.h>
 #include <math.h>
 #include <pthread.h>
-#include <stropts.h>
+#include </usr/include/x86_64-linux-musl/stropts.h>
 #include <endian.h>
 #include <stdint.h>
 

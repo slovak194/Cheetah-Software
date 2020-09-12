@@ -14,7 +14,7 @@ set(CMAKE_COLOR_MAKEFILE   ON)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
-set(CMAKE_VERBOSE_MAKEFILE ON)
+#set(CMAKE_VERBOSE_MAKEFILE ON)
 
 option(MINI_CHEETAH_BUILD "use compiler flags for mini cheetah computer" OFF)
 set(BUILD_TYPE_RELEASE TRUE)
@@ -28,7 +28,7 @@ if(MINI_CHEETAH_BUILD)
   set(CMAKE_CXX_FLAGS "-O3 -no-pie -ggdb -Wall \
   -Wextra -Wcast-align -Wdisabled-optimization -Wformat=2 \
   -Winit-self -Woverloaded-virtual \
-  -Wshadow -Wsign-promo -Werror")
+  -Wshadow -Wsign-promo -Werror -Wno-error=stringop-truncation")
   set(CMAKE_C_FLAGS "-O3  -ggdb -std=gnu99 -I.")
   message("**** Mini-Cheetah build enabled ****")
 else(MINI_CHEETAH_BUILD)
@@ -46,7 +46,7 @@ else(MINI_CHEETAH_BUILD)
     -Wextra -Wcast-align -Wdisabled-optimization -Wformat=2 \
     -Winit-self -Wmissing-include-dirs -Woverloaded-virtual \
     -Wshadow -Wsign-promo")
-    include_directories("/usr/local/include/")   # lcm includes
+    include_directories("/usr/include/")   # lcm includes
   endif()
 
   set(CMAKE_C_FLAGS "-O3  -ggdb  -march=native -std=gnu99 -I.")
@@ -68,7 +68,7 @@ add_subdirectory(common)
 if(NO_SIM)
 
 else(NO_SIM)
-#  add_subdirectory(sim)
+  add_subdirectory(sim)
 endif()
 
 add_subdirectory(user)
